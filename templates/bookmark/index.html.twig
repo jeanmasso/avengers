@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste complète des marques-pages{% endblock %}
+
+{% block body %}
+
+    <h2 class="text-center text-danger my-3">Liste complète des marques-pages</h2>
+
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Url</th>
+            <th scope="col">Commentaire</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bookmark in bookmarks %}
+            <tr>
+            <td>{{ bookmark.url }}</td>
+            <td>{{ bookmark.comment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}
