@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un marque-page{% endblock %}
+
+{% block body %}
+
+    <h2 class="text-center text-danger my-3">Liste complète des marques-pages</h2>
+
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Libellé</th>
+            <th scope="col">Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Id</td>
+            <td>{{ detailBookmark.id }}</td>
+            </tr>
+            <tr>
+            <td>Url</td>
+            <td>{{ detailBookmark.url }}</td>
+            </tr>
+            <tr>
+            <td>Date de création</td>
+            <td>{{ createdDateBookmark.date }}</td>
+            </tr>
+            <tr>
+            <td>Commentaire</td>
+            <td>{{ detailBookmark.comment }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

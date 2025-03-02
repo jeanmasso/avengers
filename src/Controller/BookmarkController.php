@@ -8,8 +8,9 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Entity\Bookmark;
 use Doctrine\ORM\EntityManagerInterface;
 
+#[Route("/marque-page", requirements: ["_locale" => "en|es|fr"], name: "bookmark_")]
 final class BookmarkController extends AbstractController{
-    #[Route('/bookmark', name: 'app_bookmark')]
+    #[Route('/', name: 'index')]
     public function index(EntityManagerInterface $entityManager) {
         $bookmarks = $entityManager
             ->getRepository(Bookmark::class)
@@ -20,7 +21,7 @@ final class BookmarkController extends AbstractController{
         ]);
     }
 
-    #[Route("/bookmark/ajouter", name: "bookmark_ajouter")]
+    #[Route("/ajouter", name: "add")]
     public function addBookmark(EntityManagerInterface $entityManager): Response {
 
         $newData = [
@@ -40,5 +41,22 @@ final class BookmarkController extends AbstractController{
 
         $entityManager->flush();
         return new Response("Marques-pages sauvegardés.");
+    }
+
+    #[Route("/detail/{bookmarkId<\d+>?1}", name: "detail")]
+    public function detailsBookmark(int $bookmarkId, EntityManagerInterface $entityManager): Response
+    {
+        $bookmark = $entityManager 
+            ->getRepository(Bookmark::class) 
+            ->find($bookmarkId);
+
+        if (!$bookmark) {
+            throw $this->createNotFoundException("Aucun marque-page avec l'id ". $bookmarkId);
+        }
+
+        return $this->render('bookmark/detail/index.html.twig', [
+            'detailBookmark' => $bookmark,
+            'createdDateBookmark' => $bookmark->getCreatedDate()
+        ]);
     }
 }
