@@ -1,0 +1,32 @@
+{# Template : Liste des auteurs #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste complète des auteurs{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Liste complète des auteurs</h2>
+
+    {# === TABLEAU DES AUTEURS === #}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+            <tr>
+            <td>{{ author.firstname }}</td>
+            <td>{{ author.lastname }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

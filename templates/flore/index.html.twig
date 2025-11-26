@@ -1,0 +1,29 @@
+{# Liste de la flore avec photos et descriptions en cartes Bootstrap #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'flore.list.title'|trans }}{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">{{ 'flore.list.title'|trans }}</h2>
+
+    {# === GRILLE DE CARTES === #}
+    {# Affiche chaque élément de flore avec photo, nom et description #}
+    <div class="container">
+        <div class="row">
+            {% for flore in flores %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{{ flore.photoUrl }}" class="card-img-top" alt="{{ flore.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ flore.name }}</h5>
+                        <p class="card-text">{{ flore.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

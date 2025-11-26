@@ -1,0 +1,29 @@
+{# Liste de la faune avec photos et descriptions en cartes Bootstrap #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'faune.list.title'|trans }}{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">{{ 'faune.list.title'|trans }}</h2>
+
+    {# === GRILLE DE CARTES === #}
+    {# Affiche chaque élément de faune avec photo, nom et description #}
+    <div class="container">
+        <div class="row">
+            {% for faune in faunes %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{{ faune.photoUrl }}" class="card-img-top" alt="{{ faune.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ faune.name }}</h5>
+                        <p class="card-text">{{ faune.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

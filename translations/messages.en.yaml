@@ -1,0 +1,50 @@
+# Books
+book.list.title: "Book List"
+book.detail.title: "Book Details"
+book.add.title: "Add a New Book"
+book.edit.title: "Edit Book"
+book.title: "Title"
+book.year: "Year of Publication"
+book.author: "Author"
+
+# Bookmarks
+bookmark.list.title: "Bookmark List"
+bookmark.detail.title: "Bookmark Details"
+bookmark.add.title: "Add a New Bookmark"
+bookmark.edit.title: "Edit Bookmark"
+bookmark.url: "URL"
+bookmark.comment: "Comment"
+bookmark.tags: "Tags"
+bookmark.created_date: "Created Date"
+
+# Authors
+author.list.title: "Author List"
+author.detail.title: "Author Details"
+author.add.title: "Add a New Author"
+author.edit.title: "Edit Author"
+author.firstname: "First Name"
+author.lastname: "Last Name"
+
+# Fauna and Flora
+faune.list.title: "Fauna List"
+flore.list.title: "Flora List"
+cailloux.title: "The Pebble"
+
+# Buttons
+button.back: "← Back to List"
+button.save: "Save"
+button.add_another: "Add Another"
+button.home: "Back to Home"
+
+# Messages
+message.success.added: "has been successfully added!"
+message.success.modified: "has been successfully modified!"
+message.no_items: "No items found"
+
+# Navigation
+nav.home: "Home"
+nav.books: "Books"
+nav.bookmarks: "Bookmarks"
+nav.cailloux: "The Pebble"
+nav.faune: "Fauna"
+nav.flore: "Flora"

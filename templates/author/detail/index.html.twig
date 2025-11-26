@@ -1,0 +1,42 @@
+{# Template : Page de détail d'un auteur #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un auteur{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Détail de l'auteur</h2>
+
+    {# === TABLEAU DE DÉTAILS === #}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Libellé</th>
+            <th scope="col">Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Id</td>
+            <td>{{ detailAuthor.id }}</td>
+            </tr>
+            <tr>
+            <td>Prénom</td>
+            <td>{{ detailAuthor.firstname }}</td>
+            </tr>
+            <tr>
+            <td>Nom</td>
+            <td>{{ detailAuthor.lastname }}</td>
+            </tr>
+            <tr>
+            <td>Nombre de livres</td>
+            <td>{{ detailAuthor.books|length }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{# Template : Affichage des statistiques (nombre total de livres) #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques - Livres{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Statistiques des livres</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('book_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === CARTE DE STATISTIQUES === #}
+    <div class="d-flex justify-content-center">
+        <div class="card shadow-sm w-50">
+            <div class="card-body text-center">
+                <h3 class="card-title">Nombre total de livres</h3>
+                <div class="display-1 text-primary my-4">{{ total }}</div>
+                <p class="text-muted">livre(s) présent(s) en base de données</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

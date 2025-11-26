@@ -1,0 +1,47 @@
+{# Template : Page de détail d'un livre #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un livre{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Détail du livre</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('book_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === TABLEAU DE DÉTAILS === #}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Libellé</th>
+            <th scope="col">Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Id</td>
+            <td>{{ detailBook.id }}</td>
+            </tr>
+            <tr>
+            <td>Titre</td>
+            <td>{{ detailBook.title }}</td>
+            </tr>
+            <tr>
+            <td>Année</td>
+            <td>{{ detailBook.year }}</td>
+            </tr>
+            <tr>
+            <td>Auteur</td>
+            <td>{{ detailBook.author ? detailBook.author.firstname ~ ' ' ~ detailBook.author.lastname : 'N/A' }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

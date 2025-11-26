@@ -1,0 +1,45 @@
+{# Template : Résultats de la recherche de livres par première lettre #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche - Livres{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">{{ criteria }}</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('book_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === TABLEAU DES RÉSULTATS === #}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-75 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Titre</th>
+            <th scope="col">Année</th>
+            <th scope="col">Auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if books|length > 0 %}
+                {% for book in books %}
+                <tr>
+                <td><a href="{{ path('book_detail', {'bookId': book.id}) }}" data-turbo="false">{{ book.title }}</a></td>
+                <td>{{ book.year }}</td>
+                <td>{{ book.firstname ~ ' ' ~ book.lastname }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-muted"><em>Aucun livre trouvé</em></td>
+                </tr>
+            {% endif %}
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -2,19 +2,19 @@
 
 namespace App\Repository;
 
-use App\Entity\Bookmark;
+use App\Entity\Adresse;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * Repository pour la gestion des marque-pages (bookmarks)
+ * Repository pour la gestion des adresses
  *
- * Permet d'accéder aux données des marque-pages en base de données.
+ * Permet d'accéder aux données des adresses en base de données.
  * Hérite des méthodes standard de ServiceEntityRepository (findAll, find, findBy, etc.).
  *
- * @extends ServiceEntityRepository<Bookmark>
+ * @extends ServiceEntityRepository<Adresse>
  */
-class BookmarkRepository extends ServiceEntityRepository
+class AdresseRepository extends ServiceEntityRepository
 {
     /**
      * Constructeur du repository
@@ -23,28 +23,28 @@ class BookmarkRepository extends ServiceEntityRepository
      */
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Bookmark::class);
+        parent::__construct($registry, Adresse::class);
     }
 
 //    /**
-//     * @return Bookmark[] Returns an array of Bookmark objects
+//     * @return Adresse[] Returns an array of Adresse objects
 //     */
 //    public function findByExampleField($value): array
 //    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
+//        return $this->createQueryBuilder('a')
+//            ->andWhere('a.exampleField = :val')
 //            ->setParameter('val', $value)
-//            ->orderBy('b.id', 'ASC')
+//            ->orderBy('a.id', 'ASC')
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Bookmark
+//    public function findOneBySomeField($value): ?Adresse
 //    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
+//        return $this->createQueryBuilder('a')
+//            ->andWhere('a.exampleField = :val')
 //            ->setParameter('val', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()

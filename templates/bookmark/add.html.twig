@@ -1,0 +1,47 @@
+{# Template : Formulaire d'ajout de marque-page #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un marque-page{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Ajouter un nouveau marque-page</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('bookmark_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === FORMULAIRE D'AJOUT === #}
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            {{ form_start(mon_formulaire) }}
+                <div class="mb-3">
+                    {{ form_label(mon_formulaire.url) }}
+                    {{ form_widget(mon_formulaire.url, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(mon_formulaire.url) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(mon_formulaire.comment) }}
+                    {{ form_widget(mon_formulaire.comment, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+                    {{ form_errors(mon_formulaire.comment) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(mon_formulaire.tags) }}
+                    {{ form_widget(mon_formulaire.tags, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(mon_formulaire.tags) }}
+                    <small class="form-text text-muted">Maintenez Ctrl (ou Cmd sur Mac) pour sélectionner plusieurs tags</small>
+                </div>
+
+                <div class="text-center">
+                    {{ form_widget(mon_formulaire.valider, {'attr': {'class': 'btn btn-success'}}) }}
+                </div>
+            {{ form_end(mon_formulaire) }}
+        </div>
+    </div>
+
+{% endblock %}

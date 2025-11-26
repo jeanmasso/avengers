@@ -1,11 +1,20 @@
+{# Template : Page de détail d'un marque-page #}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Détail d'un marque-page{% endblock %}
 
 {% block body %}
 
-    <h2 class="text-center text-danger my-3">Liste complète des marques-pages</h2>
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Détail d'un marque-page</h2>
 
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('bookmark_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === TABLEAU DE DÉTAILS === #}
     <div class="d-flex justify-content-center">
         <table class="table table-bordered border-primary w-50 text-center">
         <thead>
@@ -21,15 +30,29 @@
             </tr>
             <tr>
             <td>Url</td>
-            <td>{{ detailBookmark.url }}</td>
+            <td><a href="{{ detailBookmark.url }}" target="_blank">{{ detailBookmark.url }}</a></td>
             </tr>
             <tr>
             <td>Date de création</td>
-            <td>{{ createdDateBookmark.date }}</td>
+            <td>{{ detailBookmark.createdDate|date('d/m/Y') }}</td>
             </tr>
             <tr>
             <td>Commentaire</td>
             <td>{{ detailBookmark.comment }}</td>
+            </tr>
+            <tr>
+            <td>Mots-clés</td>
+            <td>
+                {% if detailBookmark.tags|length > 0 %}
+                    <ul class="list-unstyled mb-0">
+                        {% for tag in detailBookmark.tags %}
+                            <li><span class="badge bg-primary">{{ tag.name }}</span></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <em class="text-muted">Aucun mot-clé</em>
+                {% endif %}
+            </td>
             </tr>
         </tbody>
         </table>

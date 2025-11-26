@@ -1,0 +1,72 @@
+{# Page d'accueil avec présentation des 3 sections principales #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Symfony dans tous ses états{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        {# === TITRE DE BIENVENUE === #}
+        <div class="text-center my-5">
+            <h1 class="display-4 text-primary mb-4">Bienvenue sur Symfony dans tous ses états !</h1>
+            <p class="lead text-muted">Explorez nos différentes rubriques</p>
+        </div>
+
+        {# === CARTES DE NAVIGATION === #}
+        {# Présentation des 3 sections : Marque-pages, Livres, Le Cailloux #}
+        <div class="row g-4 mt-4">
+            <!-- Marque-pages -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <span class="display-1">🔖</span>
+                        </div>
+                        <h3 class="card-title">Marque-pages</h3>
+                        <p class="card-text">Découvrez notre collection de marque-pages avec leurs URLs et commentaires.</p>
+                        <a href="{{ path('bookmark_index') }}" class="btn btn-primary" data-turbo="false">Voir les marque-pages</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Livres -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <span class="display-1">📚</span>
+                        </div>
+                        <h3 class="card-title">Livres</h3>
+                        <p class="card-text">Parcourez notre bibliothèque de livres classiques et leurs auteurs.</p>
+                        <a href="{{ path('book_index') }}" class="btn btn-primary" data-turbo="false">Voir les livres</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Le Cailloux -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <span class="display-1">🌿</span>
+                        </div>
+                        <h3 class="card-title">Le Cailloux</h3>
+                        <p class="card-text">Explorez la faune et la flore du Cailloux avec photos et descriptions.</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <a href="{{ path('faune_index') }}" class="btn btn-outline-primary" data-turbo="false">Faune</a>
+                            <a href="{{ path('flore_index') }}" class="btn btn-outline-primary" data-turbo="false">Flore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# === PIED DE SECTION === #}
+        <div class="text-center mt-5 mb-5">
+            <p class="text-muted">
+                <em>Projet Symfony 6.4 - Découverte des fonctionnalités</em>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{# Template : Résultats de la recherche d'auteurs prolifiques #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteurs prolifiques{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Auteurs ayant écrit au moins {{ minBooks }} livre(s)</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('book_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === TABLEAU DES RÉSULTATS === #}
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered border-primary w-50 text-center">
+        <thead>
+            <tr class="table-primary border-primary">
+            <th scope="col">Auteur</th>
+            <th scope="col">Nombre de livres</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if authors|length > 0 %}
+                {% for author in authors %}
+                <tr>
+                <td>{{ author.firstname ~ ' ' ~ author.lastname }}</td>
+                <td><span class="badge bg-success">{{ author.nb_books }}</span></td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="2" class="text-muted"><em>Aucun auteur trouvé</em></td>
+                </tr>
+            {% endif %}
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

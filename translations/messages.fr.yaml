@@ -1,0 +1,50 @@
+# Livres
+book.list.title: "Liste des livres"
+book.detail.title: "Détail du livre"
+book.add.title: "Ajouter un nouveau livre"
+book.edit.title: "Modifier le livre"
+book.title: "Titre"
+book.year: "Année de parution"
+book.author: "Auteur"
+
+# Marque-pages
+bookmark.list.title: "Liste des marque-pages"
+bookmark.detail.title: "Détail du marque-page"
+bookmark.add.title: "Ajouter un nouveau marque-page"
+bookmark.edit.title: "Modifier le marque-page"
+bookmark.url: "URL"
+bookmark.comment: "Commentaire"
+bookmark.tags: "Tags"
+bookmark.created_date: "Date de création"
+
+# Auteurs
+author.list.title: "Liste des auteurs"
+author.detail.title: "Détail de l'auteur"
+author.add.title: "Ajouter un nouvel auteur"
+author.edit.title: "Modifier l'auteur"
+author.firstname: "Prénom"
+author.lastname: "Nom"
+
+# Faune et Flore
+faune.list.title: "Liste de la faune"
+flore.list.title: "Liste de la flore"
+cailloux.title: "Le Cailloux"
+
+# Boutons
+button.back: "← Retour à la liste"
+button.save: "Enregistrer"
+button.add_another: "Ajouter un autre"
+button.home: "Retour à l'accueil"
+
+# Messages
+message.success.added: "a été ajouté avec succès !"
+message.success.modified: "a été modifié avec succès !"
+message.no_items: "Aucun élément trouvé"
+
+# Navigation
+nav.home: "Accueil"
+nav.books: "Livres"
+nav.bookmarks: "Marque-pages"
+nav.cailloux: "Le Cailloux"
+nav.faune: "Faune"
+nav.flore: "Flore"

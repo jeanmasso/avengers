@@ -1,0 +1,40 @@
+{# Template : Formulaire d'ajout d'auteur #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un auteur{% endblock %}
+
+{% block body %}
+
+    {# === TITRE DE LA PAGE === #}
+    <h2 class="text-center text-danger my-3">Ajouter un nouvel auteur</h2>
+
+    {# === BOUTON RETOUR === #}
+    <div class="text-center my-3">
+        <a href="{{ path('author_index') }}" class="btn btn-primary" data-turbo="false">← Retour à la liste</a>
+    </div>
+
+    {# === FORMULAIRE D'AJOUT === #}
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            {{ form_start(mon_formulaire) }}
+                <div class="mb-3">
+                    {{ form_label(mon_formulaire.firstname) }}
+                    {{ form_widget(mon_formulaire.firstname, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(mon_formulaire.firstname) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(mon_formulaire.lastname) }}
+                    {{ form_widget(mon_formulaire.lastname, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(mon_formulaire.lastname) }}
+                </div>
+
+                <div class="text-center">
+                    {{ form_widget(mon_formulaire.valider, {'attr': {'class': 'btn btn-success'}}) }}
+                </div>
+            {{ form_end(mon_formulaire) }}
+        </div>
+    </div>
+
+{% endblock %}
